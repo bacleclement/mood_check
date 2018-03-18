@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  thought_check: one
+  type: 
+  title: MyString
+  hour: MyString
+  state: false
+  created_at: 2018-03-18 10:02:15
+  description: MyText
+
+two:
+  thought_check: two
+  type: 
+  title: MyString
+  hour: MyString
+  state: false
+  created_at: 2018-03-18 10:02:15
+  description: MyText
