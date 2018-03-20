@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>MoodCheck</title>
     <%= csrf_meta_tags %>
 
@@ -9,8 +11,8 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= render '/shared/navbar' %>
+    <%= render '/shared/flashes' %>
     <%= yield %>
   </body>
 </html>

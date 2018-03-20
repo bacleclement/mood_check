@@ -1,2 +1,17 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: url('https://wallpapercave.com/wp/lLWDIpL.jpg');">
+  <div class="banner-content">
+    <h1>MindHunter</h1>
+    <p>Remettre en question ses pensées, passer à l'action pour changer</p>
+    <% if current_user  %>
+      <%= link_to(new_thought_check_path) do %>
+        <p class="btn btn-primary btn-lg">Commencer</p>
+      <% end %>
+    <% else %>
+      <%= link_to(new_user_registration_path) do %>
+        <p class="btn btn-primary btn-lg">Commencer</p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+

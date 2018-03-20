@@ -1,2 +1,15 @@
-<h1>Profiles#new</h1>
-<p>Find me in app/views/profiles/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <%= simple_form_for [@profile] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :username %>
+        <%= f.input :age %>
+        <%= f.input :gender %>
+        <%= f.button :submit, class: "btn btn-success"%>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
