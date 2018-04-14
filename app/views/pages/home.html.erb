@@ -1,14 +1,15 @@
-<div class="banner" style="background-image: url('https://wallpapercave.com/wp/lLWDIpL.jpg');">
+<div class="banner">
   <div class="banner-content">
-    <h1>MindHunter</h1>
-    <p>Remettre en question ses pensées, passer à l'action pour changer</p>
+
+    <h2>Mind</h2>
+    <p style="color: black;">Remettre en question ses pensées, <br>passer à l'action pour changer</p>
     <% if current_user  %>
       <%= link_to(new_thought_check_path) do %>
-        <p class="btn btn-primary btn-lg">Commencer</p>
+        <p class="btn">Commencer</p>
       <% end %>
     <% else %>
       <%= link_to(new_user_registration_path) do %>
-        <p class="btn btn-primary btn-lg">Commencer</p>
+        <p class="btn">Commencer</p>
       <% end %>
     <% end %>
   </div>

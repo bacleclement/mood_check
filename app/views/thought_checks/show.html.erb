@@ -1,26 +1,27 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-3">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('situation.jpg'), background-size: cover">
+    <h2>Ma pensée</h2>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="card card-1">
         <h2 class="title">Situation</h2>
         <p class="content"><%= @thought_check.situation %></p>
       </div>
     </div>
-    <div class="col-xs-3">
-      <div class="card">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="card card-2">
         <h2 class="title">Pensée</h2>
         <p class="content"><%= @thought_check.thought %></p>
       </div>
     </div>
-    <div class="col-xs-3">
-      <div class="card">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="card card-3">
         <h2 class="title">Emotion</h2>
         <p class="content"><%= @thought_check.emotion %></p>
         <p class="content"><%= @thought_check.emotion_level * 10 %></p>
       </div>
     </div>
-    <div class="col-xs-3">
-      <div class="card">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="card card-4">
         <h2 class="title">Réaction physiologique</h2>
         <p class="content"><%= @thought_check.physiological %></p>
       </div>

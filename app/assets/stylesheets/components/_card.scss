@@ -1,12 +1,29 @@
 .card {
-  // background-size: cover !important;
+  background-size: cover !important;
   background-position: center;
   position: relative;
   margin: 20px;
-  width: 200px;
-  height: 280px;
+  width: 280px;
+  height: 350px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  border-radius: 8px;
+  &.card-1 {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('situation.jpg');
+  }
+  &.card-2 {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('thoughts.jpg');
+  }
+  &.card-3 {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('feeling.jpg');
+  }
+  &.card-4 {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('reaction.jpg');
+  }
+}
+
+p {
+  color: #FFF;
 }
 
 .card:hover {
@@ -17,10 +34,12 @@
   position: absolute;
   left: 5px;
   top: 15px;
+  color: #FFF;
 }
 
 .content {
   position: absolute;
   left: 5px;
-  bottom: 20px;
+  bottom: 40px;
+  text-align: center;
 }
