@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @user = User.new(current_user)
+    @user = User.find(current_user.id)
     @profile = Profile.new(params_profile)
     @profile.user = @user
     if @profile.save
@@ -43,7 +43,7 @@ class ProfilesController < ApplicationController
     params.require(:profile).permit(:username, :age, :gender)
   end
 
-  def set_user
-    @profile = User.profile(params[:id])
+  def set_profile
+    @profile = Profile.find(params[:id])
   end
 end

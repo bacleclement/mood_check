@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180318090215) do
+ActiveRecord::Schema.define(version: 20180412072749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20180318090215) do
   create_table "thought_checks", force: :cascade do |t|
     t.bigint "profile_id"
     t.string "situation"
-    t.string "type"
     t.text "thought"
     t.string "emotion"
     t.integer "emotion_level"

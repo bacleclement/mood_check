@@ -1,2 +1,18 @@
-<h1>ThoughtChecks#new</h1>
-<p>Find me in app/views/thought_checks/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <%= simple_form_for [@thought_check] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :situation %>
+        <%= f.input :thought %>
+        <%= f.input :emotion %>
+        <%= f.input :emotion_level %>
+        <%= f.input :physiological %>
+        <%= f.input :negative_proof %>
+        <%= f.input :positive_proof %>
+        <%= f.button :submit, class: "btn btn-success"%>
+      <% end %>
+    </div>
+  </div>
+</div>
+
