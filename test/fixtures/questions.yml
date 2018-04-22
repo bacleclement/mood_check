@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  negative_proof: MyText
+  positive_proof: MyText
+  alternative: MyText
+  worst_case: MyText
+  best_case: MyText
+  realistic: MyText
+  thought_effect: MyString
+  friend: MyText
+  new_trust: MyString
+  new_emotion: MyString
+  new_emotion_level: MyString
+  thought_check: one
+
+two:
+  negative_proof: MyText
+  positive_proof: MyText
+  alternative: MyText
+  worst_case: MyText
+  best_case: MyText
+  realistic: MyText
+  thought_effect: MyString
+  friend: MyText
+  new_trust: MyString
+  new_emotion: MyString
+  new_emotion_level: MyString
+  thought_check: two

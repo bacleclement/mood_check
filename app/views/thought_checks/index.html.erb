@@ -1,2 +1,10 @@
-<h1>ThoughtChecks#index</h1>
-<p>Find me in app/views/thought_checks/index.html.erb</p>
+<div class="container">
+  <h1>Mes pensées</h1>
+  <div class="row">
+    <% @thought_checks.each do |thought_check| %>
+      <div class="col-md-3">
+        <%= render 'shared/card', thought_check: thought_check %>
+      </div>
+    <% end %>
+  </div>
+</div>

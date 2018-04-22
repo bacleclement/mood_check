@@ -20,12 +20,7 @@
   &.card-4 {
     background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('reaction.jpg');
   }
-  &p {
-  color: #FFF;
-  }
 }
-
-
 
 .card:hover {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -39,8 +34,38 @@
 }
 
 .content {
+  background-color: black;
+  padding: 5px;
+  border-radius: 3px;
+  opacity: 0.8;
+  font-size: 20px;
   position: absolute;
-  left: 5px;
+  left: 15px;
   bottom: 40px;
   text-align: center;
+  color: #FFF;
 }
+
+.emotion_level {
+  background-color: black;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 20px;
+  position: absolute;
+  right: 15px;
+  bottom: 40px;
+  color: #FFF;
+}
+
+.about {
+  background-color: black;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 20px;
+  position: absolute;
+  left: 15px;
+  bottom: 100px;
+  color: #FFF;
+}
+
+

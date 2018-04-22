@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <h2>Ma pensée</h2>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="card card-1">
+        <h2 class="title">Où ?</h2>
+        <p class="content"><%= thought_check.situation %></p>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="card card-2">
+        <h2 class="title">Quoi ? </h2>
+        <p class="about"> <%= thought_check.about %></p>
+        <p class="content"><%= thought_check.thought %></p>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="card card-3">
+        <h2 class="title">Emotion ? </h2>
+        <p class="content"><%= thought_check.emotion %></p>
+        <% if thought_check.emotion_level %>
+          <p class="emotion_level"><%= thought_check.emotion_level %></p>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-6 col-xs-12">
+      <div class="card card-4">
+        <h2 class="title">Sensation ?</h2>
+        <p class="content"><%= thought_check.physiological %></p>
+      </div>
+    </div>
+  </div>
+</div>

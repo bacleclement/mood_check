@@ -49,7 +49,7 @@ class ThoughtChecksController < ApplicationController
   private
 
   def params_thought_check
-    params.require(:thought_check).permit(:situation, :type, :thought, :emotion, :emotion_level, :physiological, :negative_proof, :positive_proof)
+    params.require(:thought_check).permit(:situation, :type, :thought, :emotion, :emotion_level, :about, :physiological, :negative_proof, :positive_proof, :trust)
   end
 
   # def set_thought_check

@@ -3,28 +3,45 @@
     <h2>Ma pensée</h2>
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="card card-1">
-        <h2 class="title">Situation</h2>
+        <h2 class="title">Où ?</h2>
         <p class="content"><%= @thought_check.situation %></p>
       </div>
     </div>
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="card card-2">
-        <h2 class="title">Pensée</h2>
+        <h2 class="title">Quoi ? </h2>
+        <p class="about"> <%= @thought_check.about %></p>
         <p class="content"><%= @thought_check.thought %></p>
       </div>
     </div>
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="card card-3">
-        <h2 class="title">Emotion</h2>
+        <h2 class="title">Emotion ? </h2>
         <p class="content"><%= @thought_check.emotion %></p>
-        <p class="content"><%= @thought_check.emotion_level * 10 %></p>
+        <p class="emotion_level"><%= @thought_check.emotion_level %></p>
       </div>
     </div>
     <div class="col-md-3 col-sm-6 col-xs-12">
       <div class="card card-4">
-        <h2 class="title">Réaction physiologique</h2>
+        <h2 class="title">Sensation ?</h2>
         <p class="content"><%= @thought_check.physiological %></p>
       </div>
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card card-4">
+        <h2 class="title">Votre niveau de confiance</h2>
+        <p class="content"><%= @thought_check.trust %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<%= link_to thought_checks_path do %>
+  <p>Mes pensées</p>
+<% end %>
+<%= link_to new_thought_check_question_path(@thought_check) do %>
+  <p>Se questionner</p>
+<% end %>
