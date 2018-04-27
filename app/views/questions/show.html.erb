@@ -1,2 +1,15 @@
-<h1>Questions#show</h1>
-<p>Find me in app/views/questions/show.html.erb</p>
+
+<% if @question %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="card card-4">
+          <h2 class="title">Preuve +</h2>
+          <p class="content"><%= @question.negative_proof %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+

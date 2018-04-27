@@ -9,7 +9,9 @@ class ThoughtChecksController < ApplicationController
 
   def show
     @thought_check = ThoughtCheck.find(params[:id])
-    redirect_to thought_check_path unless @thought_check
+    # I want to select only question about this thought
+    @questions = Question.all.where(thought_check_id: params[:id])
+    redirect_to new_thought_check_path unless @thought_check
   end
 
   def new
