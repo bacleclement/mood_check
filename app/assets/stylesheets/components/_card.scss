@@ -20,6 +20,32 @@
   &.card-4 {
     background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('reaction.jpg');
   }
+  &.card-4 {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('reaction.jpg');
+  }
+  &.card-5 {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('trust.jpg');
+  }
+  &.card-6 {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('positive_proof.jpg');
+    width: 500px;
+  }
+  &.card-7 {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('negative_proof.jpg');
+    width: 500px;
+  }
+  &.card-8 {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('worst_case.jpg');
+  }
+  &.card-9 {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('best_case.jpg');
+  }
+  &.card-10 {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('alternative.jpg');
+  }
+  &.card-11 {
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('friend.jpg');
+  }
 }
 
 .card:hover {
