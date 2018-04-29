@@ -7,14 +7,14 @@
         <%= f.input :positive_proof %>
         <p>Quelles sont preuves en défaveur de cette pensée ? </p>
         <%= f.input :negative_proof %>
-        <p>Pouvez-vous imaginer une pensée alternative ? </p>
-        <%= f.input :alternative %>
         <p>Que peut-il se passer dans le pire des cas ? </p>
         <%= f.input :worst_case %>
         <p>Que peut-il se passer dans le meilleur des cas ? </p>
         <%= f.input :best_case %>
         <p>Que peut-il se passer dans le cas le plus réaliste ? </p>
         <%= f.input :realistic %>
+        <p>Pouvez-vous imaginer une pensée alternative ? </p>
+        <%= f.input :alternative %>
         <p>À votre avis, quel est l'effet que provoque cette pensée sur votre émotion ?</p>
         <%= f.select(:thought_effect, [['Augmente', 'Augmente'],
                           ['Diminue', 'Diminue'],
@@ -39,7 +39,7 @@
                                  ],{ :prompt => "Choisissez une réponse"},
                                    { :multiple => false, :size => 11 }
                                  ) %>
-        <p>Quelle émotion avez-vous ressenti durant cette contrariété ? </p>
+        <p>Après ce questionnement, quelle émotion ressentez-vous ? </p>
         <%= f.select(:new_emotion, [['Peur', 'Peur'],
                                   ['Colère', 'Colère'],
                                   ['Tristesse', 'Tristesse'],

@@ -31,25 +31,86 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <div class="card card-4">
-        <h2 class="title">Votre niveau de confiance</h2>
+    <div class="col-xs-12 col-xs-offset-4">
+      <div class="card card-5">
+        <h2 class="title">Votre niveau de confiance vis-à-vis de cette pensée</h2>
         <p class="content"><%= @thought_check.trust %></p>
       </div>
     </div>
   </div>
 </div>
-
 <% if @questions %>
   <% @questions.each do |question| %>
     <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        <div class="card card-4">
-          <h2 class="title">Preuve +</h2>
+      <h2>Je remets en question cette pensée  </h2>
+      <% if question.positive_proof %>
+      <div class="col-md-6 col-xs-12">
+        <div class="card card-6">
+          <h2 class="title">Faits qui prouvent que cette pensée est <b>vraie</b></h2>
+          <p class="content"><%= question.positive_proof %></p>
+        </div>
+      </div>
+      <% end %>
+      <% if question.negative_proof %>
+      <div class="col-md-6 col-xs-12">
+        <div class="card card-7">
+          <h2 class="title">Faits qui prouvent que cette pensée est <b>fausse</b></h2>
           <p class="content"><%= question.negative_proof %></p>
         </div>
       </div>
+      <% end %>
+      <% if question.worst_case %>
+      <div class="col-md-6 col-xs-12">
+        <div class="card card-8">
+          <h2 class="title">Dans le pire des cas</h2>
+          <p class="content"><%= question.worst_case %></p>
+        </div>
+      </div>
+      <% end %>
+      <% if question.best_case %>
+      <div class="col-md-6 col-xs-12">
+        <div class="card card-9">
+          <h2 class="title">Dans le meilleur des cas</h2>
+          <p class="content"><%= question.best_case %></p>
+        </div>
+      </div>
+      <% end %>
+      <% if question.alternative %>
+      <div class="col-md-6 col-xs-12">
+        <div class="card card-10">
+          <h2 class="title">Pensée alternative</h2>
+          <p class="content"><%= question.alternative %></p>
+        </div>
+      </div>
+      <% end %>
+      <% if question.friend %>
+      <div class="col-md-6 col-xs-12">
+        <div class="card card-11">
+          <h2 class="title">Qu'aurait fait un ami ?</h2>
+          <p class="content"><%= question.friend %></p>
+        </div>
+      </div>
+      <% end %>
+      <% if question.new_trust %>
+      <div class="col-md-6 col-xs-12">
+        <div class="card card-5">
+          <h2 class="title">Confiance envers cette pensée</h2>
+          <p class="content"><%= question.new_trust %></p>
+        </div>
+      </div>
+      <% end %>
+        <div class="col-md-6 col-xs-12">
+          <div class="card card-3">
+            <h2 class="title">Emotion ? </h2>
+            <% if question.new_emotion %>
+              <p class="content"><%= question.new_emotion %></p>
+            <% end %>
+            <% if question.new_emotion_level %>
+              <p class="emotion_level"><%= question.new_emotion_level %></p>
+            <% end %>
+          </div>
+        </div>
     </div>
   </div>
   <% end %>
