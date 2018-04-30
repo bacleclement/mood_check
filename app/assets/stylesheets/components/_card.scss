@@ -8,55 +8,96 @@
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   border-radius: 8px;
-  &.card-1 {
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('situation.jpg');
+  height: 500px;
+  &.big-card {
+    width: 800px;
+    background-color: #FFF;
+    margin-left: 70px;
   }
-  &.card-2 {
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('thoughts.jpg');
-  }
-  &.card-3 {
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('feeling.jpg');
-  }
-  &.card-4 {
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('reaction.jpg');
-  }
-  &.card-4 {
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('reaction.jpg');
-  }
-  &.card-5 {
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('trust.jpg');
-  }
-  &.card-6 {
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('positive_proof.jpg');
-    width: 500px;
-  }
-  &.card-7 {
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('negative_proof.jpg');
-    width: 500px;
-  }
-  &.card-8 {
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('worst_case.jpg');
-  }
-  &.card-9 {
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('best_case.jpg');
-  }
-  &.card-10 {
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('alternative.jpg');
-  }
-  &.card-11 {
-    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('friend.jpg');
-  }
+}
+.card-left {
+  background-position: center;
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('thoughts.jpg');
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  border-radius: 8px 0px 0px 8px;
+  width: 320px;
+}
+
+.card-right {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 450px;
+}
+
+.card-left-2 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 450px;
+}
+
+.card-right-2 {
+  background-position: center;
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('feeling.jpg');
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  border-radius: 0px 8px 8px 0px;
+  width: 320px;
+}
+
+.card-left-3 {
+  background-position: center;
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('trust.jpg');
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  border-radius: 8px 0px 0px 8px;
+  width: 320px;
+}
+
+.title-trust {
+  color: #FFF;
+  position: absolute;
+  left: 10px;
+  bottom: 50px;
+}
+
+.content-trust {
+  color: #FFF;
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
 }
 
 .card:hover {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
-.title {
+.master-title {
   position: absolute;
-  left: 5px;
-  top: 15px;
+  top: 10px;
+  left: 10px;
   color: #FFF;
+}
+
+.date {
+  position: absolute;
+  top: 60px;
+  left: 15px;
+  color: #FFF;
+}
+
+.title {
+  color: #619BA6;
 }
 
 .content {
@@ -72,26 +113,30 @@
   color: #FFF;
 }
 
-.emotion_level {
-  background-color: black;
-  padding: 5px;
-  border-radius: 3px;
-  font-size: 20px;
+.master-title-2 {
   position: absolute;
+  top: 10px;
   right: 15px;
-  bottom: 40px;
   color: #FFF;
 }
 
-.about {
-  background-color: black;
-  padding: 5px;
-  border-radius: 3px;
-  font-size: 20px;
+.date-2 {
   position: absolute;
-  left: 15px;
-  bottom: 100px;
+  top: 60px;
+  right: 15px;
   color: #FFF;
 }
 
+.title-trust-2 {
+  color: #FFF;
+  position: absolute;
+  right: 10px;
+  bottom: 50px;
+}
 
+.content-trust-2 {
+  color: #FFF;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}

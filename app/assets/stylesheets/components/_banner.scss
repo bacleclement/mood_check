@@ -7,25 +7,25 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('room.jpg');
+  // background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('room.jpg');
 }
 .banner h2 {
   font-size: 50px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-  color: black;
+  color: #FFF;
 }
 .banner p {
   font-size: 25px;
   opacity: 0.9;
   margin-bottom: 30px;
-  color: black;
+  color: #619BA6;
 }
 
 .btn {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   border-radius: 8px;
-  background-color: #D3D3D3;
+  background-color: #FFF;
 }
 
 .btn:hover {
