@@ -1,10 +1,7 @@
-<div class="container">
-  <h1>Mes pensées</h1>
-  <div class="row">
-    <% @thought_checks.each do |thought_check| %>
-      <div class="col-md-3">
-        <%= render 'shared/card', thought_check: thought_check %>
-      </div>
-    <% end %>
-  </div>
-</div>
+<h1 style="color: #FFF;">Mes pensées</h1>
+<% @thought_checks.each do |thought_check| %>
+
+    <%= render 'shared/card', thought_check: thought_check %>
+
+  <hr>
+<% end %>
