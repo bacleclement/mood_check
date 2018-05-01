@@ -31,66 +31,68 @@
 </div>
 <hr>
 <% if @questions %>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-xs-offset-1">
-          <div class="card big-card">
-            <div class="card-left-2">
-              <h2 class="title"><b>Preuves +</b></h2>
-              <p><%= @questions[0].positive_proof %></p>
-              <hr>
-              <h2 class="title"><b>Preuve -</b> </h2>
-              <p><%= @questions[0].negative_proof %></p>
-              <hr>
-              <h2 class="title"><b>Pire des cas</b> </h2>
-              <p><%= @questions[0].worst_case %></p>
-              <hr>
-              <h2 class="title"><b>Meilleur des cas</b></h2>
-              <p><%= @questions[0].best_case %></p>
-              <hr>
-              <h2 class="title"><b>Le plus probable</b></h2>
-              <p><%= @questions[0].realistic %></p>
-            </div>
-            <div class="card-right-2">
-              <div class="text">
-                <h2 class="master-title-2">questionnement</h2>
-                <p class="date-2"><%= @questions[0].created_at.strftime("%b %d, %Y") %></p>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-xs-offset-1">
+        <div class="card big-card">
+          <div class="card-left-2">
+            <h2 class="title"><b>Preuves +</b></h2>
+            <p><%= @questions[0].positive_proof %></p>
+            <hr>
+            <h2 class="title"><b>Preuve -</b> </h2>
+            <p><%= @questions[0].negative_proof %></p>
+            <hr>
+            <h2 class="title"><b>Pire des cas</b> </h2>
+            <p><%= @questions[0].worst_case %></p>
+            <hr>
+            <h2 class="title"><b>Meilleur des cas</b></h2>
+            <p><%= @questions[0].best_case %></p>
+            <hr>
+            <h2 class="title"><b>Le plus probable</b></h2>
+            <p><%= @questions[0].realistic %></p>
           </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-xs-offset-1">
-          <div class="card big-card">
-            <div class="card-left-3">
-              <h2 class="master-title">Votre <b>pensée</b> alternative</h2>
-              <p class="date"><%= @questions[0].created_at.strftime("%b %d, %Y") %></p>
-              <P class="title-trust">Niveau de confiance</p>
-              <h2 class="content-trust"><%= @questions[0].new_trust %></h2>
-            </div>
-            <div class="card-right">
-              <div class="text">
-                <h2 class="title"><b>Quoi ?</b></h2>
-                <p><b>Votre pensée alternative :</b> <%= @questions[0].alternative %></p>
-                <hr>
-                <h2 class="title"><b>Emotion ?</b> </h2>
-                <p><%= @questions[0].new_emotion %></p>
-                <p><b>Intensité de l'émotion :</b> <%= @questions[0].new_emotion_level %></p>
+          <div class="card-right-2">
+            <div class="text">
+              <h2 class="master-title-2">questionnement</h2>
+              <p class="date-2"><%= @questions[0].created_at.strftime("%b %d, %Y") %></p>
               </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-xs-offset-1">
+        <div class="card big-card">
+          <div class="card-left-3">
+            <h2 class="master-title">Votre <b>pensée</b> alternative</h2>
+            <p class="date"><%= @questions[0].created_at.strftime("%b %d, %Y") %></p>
+            <P class="title-trust">Niveau de confiance</p>
+            <h2 class="content-trust"><%= @questions[0].new_trust %></h2>
+          </div>
+          <div class="card-right">
+            <div class="text">
+              <h2 class="title"><b>Quoi ?</b></h2>
+              <p><b>Votre pensée alternative :</b> <%= @questions[0].alternative %></p>
+              <hr>
+              <h2 class="title"><b>Emotion ?</b> </h2>
+              <p><%= @questions[0].new_emotion %></p>
+              <p><b>Intensité de l'émotion :</b> <%= @questions[0].new_emotion_level %></p>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <hr>
-
+  </div>
+<hr>
 <% end %>
-<%= link_to thought_checks_path do %>
-  <p>Mes pensées</p>
-<% end %>
-<%= link_to new_thought_check_question_path(@thought_check) do %>
-  <p>Se questionner</p>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-5">
+      <%= link_to new_thought_check_question_path(@thought_check) do %>
+        <p class="btn" style="margin: 30px;">Se questionner</p>
+      <% end %>
+    </div>
+  </div>
+</div>
