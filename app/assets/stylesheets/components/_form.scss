@@ -1,0 +1,11 @@
+.main-container {
+  display: flex;
+}
+
+#side-image {
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('thoughts.jpg');
+}

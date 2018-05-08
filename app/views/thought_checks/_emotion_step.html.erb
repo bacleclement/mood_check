@@ -1,0 +1,9 @@
+<p>Quelle émotion avez-vous ressenti durant cette contrariété ? </p>
+<%= f.select(:emotion, [['Peur', 'Peur'],
+                          ['Colère', 'Colère'],
+                          ['Tristesse', 'Tristesse'],
+                          ['Culpabilité', 'Culpabilité'],
+                          ['Haine', 'Haine'],
+                         ],{ :prompt => "Choisissez une réponse"},
+                           { :multiple => false, :size => 5 }
+                         ) %>

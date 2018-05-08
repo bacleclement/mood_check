@@ -1,0 +1,9 @@
+<p>Avez-vous ressenti sensation phyique durant cette contrariété ? </p>
+<%= f.select(:physiological, [['Palpitations', 'Palpitations'],
+                          ['Transpiration', 'Transpiration'],
+                          ['Tremblements', 'Tremblements'],
+                          ['Panique', 'Panique'],
+                          ['Rien de tout cela', 'Rien de tout cela'],
+                         ],{ :prompt => "Choisissez une réponse"},
+                           { :multiple => false, :size => 5 }
+                         ) %>

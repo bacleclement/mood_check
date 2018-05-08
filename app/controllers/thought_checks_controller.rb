@@ -2,6 +2,7 @@ class ThoughtChecksController < ApplicationController
 
   # before_action :set_thought_check, :only [ :show, :edit, :update, :destroy ]
   # I didn't understand why this line of code break my app ?
+  attr_accessor :situation, :type, :thought, :emotion, :emotion_level, :about, :physiological, :negative_proof, :positive_proof, :trust
 
   def index
     @thought_checks = ThoughtCheck.all
@@ -19,14 +20,23 @@ class ThoughtChecksController < ApplicationController
   end
 
   def create
-    @profile = Profile.find(current_user.id)
     @thought_check = ThoughtCheck.new(params_thought_check)
-    @thought_check.profile = @profile
-    if @thought_check.save
-      redirect_to @thought_check
+    @thought_check.current_step = session[:thougth_check_step]
+    if params[:back_button]
+      @thought_check.previous_step
     else
-      render :new
+      @thought_check.next_step
     end
+    session[:thougth_check_step] = @thought_check.current_step
+    render 'new'
+    # @profile = Profile.find(current_user.id)
+    # @thought_check = ThoughtCheck.new(params_thought_check)
+    # @thought_check.profile = @profile
+    # if @thought_check.save
+    #   redirect_to @thought_check
+    # else
+    #   render :new
+    # end
   end
 
   def edit
@@ -51,7 +61,7 @@ class ThoughtChecksController < ApplicationController
   private
 
   def params_thought_check
-    params.require(:thought_check).permit(:situation, :type, :thought, :emotion, :emotion_level, :about, :physiological, :negative_proof, :positive_proof, :trust)
+    params.require(:thought_check).permit(:situation, :type, :thought, :emotion, :emotion_level, :about, :physiological, :trust, :back_button)
   end
 
   # def set_thought_check

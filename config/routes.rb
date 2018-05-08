@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
   resources :tasks
 
+  get 'thought_checks/new_situation', to: 'thought_checks#new_situation', as: 'new_situation'
+  # post 'thought_checks/create_situation'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'pages#home'
 end
