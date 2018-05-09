@@ -2,7 +2,6 @@ class ThoughtChecksController < ApplicationController
 
   # before_action :set_thought_check, :only [ :show, :edit, :update, :destroy ]
   # I didn't understand why this line of code break my app ?
-  attr_accessor :situation, :type, :thought, :emotion, :emotion_level, :about, :physiological, :negative_proof, :positive_proof, :trust
 
   def index
     @thought_checks = ThoughtCheck.all
@@ -16,19 +15,32 @@ class ThoughtChecksController < ApplicationController
   end
 
   def new
+    session[:thought_checks_params] ||= {}
     @thought_check = ThoughtCheck.new
+    @thought_check.current_step = session[:thought_check_step]
   end
 
   def create
-    @thought_check = ThoughtCheck.new(params_thought_check)
-    @thought_check.current_step = session[:thougth_check_step]
-    if params[:back_button]
+    session[:thought_checks_params].deep_merge!(params[:thought_check]) if params[:thought_check]
+    @thought_check = ThoughtCheck.new(session[:thought_checks_params])
+    @thought_check.current_step = session[:thought_check_step]
+    if params[:previous_button] == "Back"
       @thought_check.previous_step
+    elsif @thought_check.last_step?
+      @thought_check = session[:thought_checks_params]
+      @thought_check.save
     else
       @thought_check.next_step
     end
-    session[:thougth_check_step] = @thought_check.current_step
-    render 'new'
+    session[:thought_check_step] = @thought_check.current_step
+
+    if @thought_check.new_record?
+      render 'new'
+    else
+      flash[:notice] = "Pensée sauvegardée..."
+      redirect_to @thought_check
+    end
+    # render 'new'
     # @profile = Profile.find(current_user.id)
     # @thought_check = ThoughtCheck.new(params_thought_check)
     # @thought_check.profile = @profile
@@ -61,7 +73,7 @@ class ThoughtChecksController < ApplicationController
   private
 
   def params_thought_check
-    params.require(:thought_check).permit(:situation, :type, :thought, :emotion, :emotion_level, :about, :physiological, :trust, :back_button)
+    params.permit(:situation, :about, :thought, :emotion, :emotion_level, :physiological, :trust)
   end
 
   # def set_thought_check
