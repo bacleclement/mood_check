@@ -15,29 +15,33 @@ class ThoughtChecksController < ApplicationController
   end
 
   def new
-    session[:thought_checks_params] ||= {}
+    session[:thought_check_params] ||= {}
     @thought_check = ThoughtCheck.new
     @thought_check.current_step = session[:thought_check_step]
   end
 
   def create
-    session[:thought_checks_params].deep_merge!(params[:thought_check]) if params[:thought_check]
-    @thought_check = ThoughtCheck.new(session[:thought_checks_params])
+    @profile = Profile.find(current_user.id)
+    session[:thought_check_params].deep_merge!(params[:thought_check]) if params[:thought_check]
+    @thought_check = ThoughtCheck.new(session[:thought_check_params])
+    @thought_check.profile = @profile
     @thought_check.current_step = session[:thought_check_step]
-    if params[:previous_button] == "Back"
-      @thought_check.previous_step
-    elsif @thought_check.last_step?
-      @thought_check = session[:thought_checks_params]
-      @thought_check.save
-    else
-      @thought_check.next_step
+    if @thought_check.valid?
+      if params[:previous_button] == "Back"
+        @thought_check.previous_step
+      elsif @thought_check.last_step?
+        @thought_check.save if @thought_check.all_valid?
+      else
+        @thought_check.next_step
+      end
+      session[:thought_check_step] = @thought_check.current_step
     end
-    session[:thought_check_step] = @thought_check.current_step
 
     if @thought_check.new_record?
       render 'new'
     else
       flash[:notice] = "Pensée sauvegardée..."
+      session[:thought_check_step] = session[:thought_check_params] = nil
       redirect_to @thought_check
     end
     # render 'new'
@@ -72,9 +76,9 @@ class ThoughtChecksController < ApplicationController
 
   private
 
-  def params_thought_check
-    params.permit(:situation, :about, :thought, :emotion, :emotion_level, :physiological, :trust)
-  end
+  # def params_thought_check
+  #   params.permit(:situation, :about, :thought, :emotion, :emotion_level, :physiological, :trust)
+  # end
 
   # def set_thought_check
   #   @thought_check = ThoughtCheck.find(params[:id])

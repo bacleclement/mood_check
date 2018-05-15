@@ -1,15 +1,55 @@
 class ThoughtCheck < ApplicationRecord
   attr_writer :current_step
-  attr_accessor :situation, :thought, :emotion, :emotion_level, :about, :physiological, :trust
 
   belongs_to :profile
   has_many :tasks
   has_many :question
 
-  validates :thought, presence: true
+  validates_presence_of :situation, :if => :situation?
+  validates_presence_of :about, :if => :about?
+  validates_presence_of :thought, :if => :thought?
+  validates_presence_of :emotion, :if => :emotion?
+  validates_presence_of :emotion_level, :if => :emotion_level?
+  validates_presence_of :physiological, :if => :physiological?
+  validates_presence_of :trust, :if => :trust?
 
   def current_step
     @current_step || steps.first
+  end
+
+  def situation?
+    @current_step == "situation"
+  end
+
+  def trust?
+    @current_step == "trust"
+  end
+
+  def thought?
+    @current_step == "thought"
+  end
+
+  def trust?
+    @current_step == "trust"
+  end
+
+  def emotion?
+    @current_step == "emotion"
+  end
+
+  def emotion_level?
+    @current_step == "emotion_level"
+  end
+
+  def trust?
+    @current_step == "trust"
+  end
+
+  def all_valid?
+    steps.all? do |step|
+      self.current_step = step
+      valid?
+    end
   end
 
   def steps
@@ -25,11 +65,7 @@ class ThoughtCheck < ApplicationRecord
   end
 
   def first_step?
-    if current_step == steps.first
-      return true
-    else
-      return false
-    end
+    current_step == steps.first
   end
 
   def last_step?
