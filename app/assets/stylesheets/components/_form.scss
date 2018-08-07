@@ -1,11 +1,49 @@
-.main-container {
-  display: flex;
+// .main-container {
+//   display: flex;
+// }
+
+// #side-image {
+//   flex: 0 0 450px;
+//   height: 100vh;
+//   position: sticky !important; /* !important to override Gmaps inline CSS */
+//   top: 0 !important;
+//   background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('thoughts.jpg');
+// }
+
+#thought_check_situation {
+  border: 0px;
+  background-color: #619BA6;
 }
 
-#side-image {
-  flex: 0 0 450px;
-  height: 100vh;
-  position: sticky !important; /* !important to override Gmaps inline CSS */
-  top: 0 !important;
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('thoughts.jpg');
+.title-label {
+  color: #FFF;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.submit {
+  margin-top: 20px;
+  margin: 30px;
+}
+
+.submit:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.already-register {
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  color: #619BA6;
+}
+
+.already-register:hover {
+  color: #FFF;
+}
+
+.form-group > * {
+  border-radius: 8px;
+  border: 0px black solid;
+  width: 200px;
 }

@@ -21,16 +21,12 @@ class ThoughtCheck < ApplicationRecord
     @current_step == "situation"
   end
 
-  def trust?
-    @current_step == "trust"
+  def about?
+    @current_step == "about"
   end
 
   def thought?
     @current_step == "thought"
-  end
-
-  def trust?
-    @current_step == "trust"
   end
 
   def emotion?
@@ -39,6 +35,10 @@ class ThoughtCheck < ApplicationRecord
 
   def emotion_level?
     @current_step == "emotion_level"
+  end
+
+  def physiological?
+    @current_step == "physiological"
   end
 
   def trust?

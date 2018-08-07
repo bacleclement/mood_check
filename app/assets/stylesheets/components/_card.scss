@@ -5,7 +5,7 @@
   margin: 20px;
   width: 280px;
   height: 350px;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   border-radius: 8px;
   height: 500px;
@@ -13,6 +13,13 @@
     width: 800px;
     background-color: #FFF;
     margin-left: 70px;
+  }
+  &.card-device {
+    width: 400px;
+    margin-top: 100px;
+    background-color: #EDEDED;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('thoughts.jpg');
+    padding-top: 20px;
   }
 }
 .card-left {
@@ -78,9 +85,9 @@
   bottom: 10px;
 }
 
-.card:hover {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
+//.card:hover {
+//  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+//}
 
 .master-title {
   position: absolute;
