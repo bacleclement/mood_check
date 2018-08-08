@@ -1,5 +1,6 @@
-<p>Où avez-vous été contrariété ? </p>
-<%= f.select(:situation, [['À la maison', 'À la maison'],
+
+      <p>Où avez-vous été contrariété ? </p>
+      <%= f.select(:situation, [['À la maison', 'À la maison'],
                           ['Dans les transports', 'Dans les transports'],
                           ['Au travail', 'Au travail'],
                           ['Dans votre lit', 'Dans votre lit'],
@@ -11,5 +12,7 @@
                          ],{ :prompt => "Choisissez une réponse"},
                            { :multiple => false, :size => 8 }
                          ) %>
+
+
 
 

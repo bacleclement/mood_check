@@ -1,15 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
+  <div class="col-sm-4 col-sm-offset-4">
+    <div class="card card-device new-session text-center">
       <%= simple_form_for [@profile] do |f| %>
         <%= f.error_notification %>
-        <%= f.input :username %>
-        <%= f.input :age %>
-        <%= f.input :gender %>
+        <%= f.input :username, class: "title-label" %>
+        <%= f.input :age, class: "title-label" %>
+        <%= f.input :gender, class: "title-label" %>
         <%= f.button :submit, class: "btn btn-success"%>
       <% end %>
     </div>
   </div>
 </div>
-
+</div>
 

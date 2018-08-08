@@ -24,6 +24,12 @@
       background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('thoughts.jpg');  
     }
   }
+  &.card-form {
+    width: 400px;
+    margin-top: 100px;
+    background-color: #EDEDED;
+    padding-top: 20px;
+  }
 }
 .card-left {
   background-position: center;

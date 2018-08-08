@@ -27,7 +27,7 @@ class ThoughtChecksController < ApplicationController
     @thought_check.profile = @profile
     @thought_check.current_step = session[:thought_check_step]
     if @thought_check.valid?
-      if params[:previous_button] == "Back"
+      if params[:previous_button] == "Retour"
         @thought_check.previous_step
       elsif @thought_check.last_step?
         @thought_check.save if @thought_check.all_valid?

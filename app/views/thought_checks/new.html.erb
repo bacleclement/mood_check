@@ -1,14 +1,20 @@
 <div class="main-container">
   <div class="row">
-    <div class="col-xs-6 col-xs-offset-3">
-      <%= simple_form_for @thought_check do |f| %>
-        <%= f.error_notification %>
-        <%= render "#{@thought_check.current_step}_step", :f => f %>
-        <%= f.submit "Continue", class: "btn btn-success" %>
-        <%= f.submit "Back", :name => "previous_button", class: "btn btn-danger" unless @thought_check.first_step? %>
-      <% end %>
+  <div class="col-sm-4 col-sm-offset-4">
+    <div class="card new-session card-form text-center">
+        <%= simple_form_for @thought_check, :html=> { class: 'text-center', id: 'ms-form'} do |f| %>
+          <%= f.error_notification %>
+          <fieldset>
+            <%= render "#{@thought_check.current_step}_step", :f => f %>
+            <div class="next d-flex justify-content-center flex-nowrap pt-5">
+              <%= f.submit "Retour", :name => "previous_button", class: "btn btn-dange call-to-action" ,id:"back" unless @thought_check.first_step? %>
+              <%= f.submit "Continuer", class: "btn btn-success call-to-action" , id: "next"%>
+            </div>
+          </fieldset>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+</div>  
 
 
