@@ -20,6 +20,17 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.title-device {
+  color: #FFF;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+#new_user {
+  padding-top: 90px;
+}
+
 .submit {
   margin-top: 20px;
   margin: 30px;
@@ -29,21 +40,42 @@
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
-.already-register {
+.link {
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   position: absolute;
   bottom: 5px;
   right: 10px;
   color: #619BA6;
+  &.left {
+    left: 10px;
+    right: 230px;
+  }
 }
 
-.already-register:hover {
+.link:hover {
   color: #FFF;
 }
 
 .form-group > * {
-  border-radius: 8px;
+  border-radius: 2px;
   border: 0px black solid;
   width: 200px;
+}
+
+.field {
+  border-radius: 2px;
+  border: 0px black solid;
+  width: 200px;
+}
+
+.check_box {
+  font-family: 'Montserrat', sans-serif;
+  color: #FFF;
+  display: flex;
+  padding-left: 105px;
+}
+
+#user_remember_me {
+  margin-right: -200px;
 }
