@@ -1,6 +1,5 @@
 <p>Quel est le niveau d'intensité de cette émotion ? </p>
-<%= f.select(:emotion_level, [['0%', '0%'],
-                          ['10%', '10%'],
+<%= f.select(:emotion_level, [['10%', '10%'],
                           ['20%', '20%'],
                           ['30%', '30%'],
                           ['40%', '40%'],
@@ -11,5 +10,5 @@
                           ['90%', '90%'],
                           ['100%', '100%'],
                          ],{ :prompt => "Choisissez une réponse"},
-                           { :multiple => false, :size => 11 }
+                           { :multiple => false, :size => 10 }
                          ) %>

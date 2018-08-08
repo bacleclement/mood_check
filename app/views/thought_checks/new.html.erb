@@ -1,8 +1,18 @@
+<%= simple_form_for @thought_check, :html=> { class: 'text-center', id: 'ms-form'} do |f| %>
+  
 <div class="main-container">
   <div class="row">
   <div class="col-sm-4 col-sm-offset-4">
+    <ul id="progressbar" style="margin-top: 150px;">
+    <% @thought_check.progressbar.each_with_index do |step, index| %>
+      <% if @thought_check.current_step == step[0] %>
+        <li class ="active"><%= index + 1 %></li>
+      <% else %>
+        <li><%= index + 1 %></li>
+      <% end %>
+    <% end  %>
+  </ul>
     <div class="card new-session card-form text-center">
-        <%= simple_form_for @thought_check, :html=> { class: 'text-center', id: 'ms-form'} do |f| %>
           <%= f.error_notification %>
           <fieldset>
             <%= render "#{@thought_check.current_step}_step", :f => f %>

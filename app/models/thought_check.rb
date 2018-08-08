@@ -11,7 +11,7 @@ class ThoughtCheck < ApplicationRecord
   validates_presence_of :emotion, :if => :emotion?
   validates_presence_of :emotion_level, :if => :emotion_level?
   validates_presence_of :physiological, :if => :physiological?
-  validates_presence_of :trust, :if => :trust?
+  #validates_presence_of :trust, :if => :trust?
 
   def current_step
     @current_step || steps.first
@@ -41,8 +41,12 @@ class ThoughtCheck < ApplicationRecord
     @current_step == "physiological"
   end
 
-  def trust?
-    @current_step == "trust"
+  #def trust?
+  #  @current_step == "trust"
+  #end
+
+  def progressbar
+    [['situation', 'Étape 1'], ['about', 'Étape 2'], ['thought', 'Étape 3'], ['emotion', 'Étape 4'], ['emotion_level', 'Étape 5'], ['physiological', 'Étape 6']]
   end
 
   def all_valid?
@@ -53,7 +57,8 @@ class ThoughtCheck < ApplicationRecord
   end
 
   def steps
-    %w[situation about thought emotion emotion_level physiological trust]
+    %w[situation about thought emotion emotion_level physiological] 
+    # I delete trust step (last one step)
   end
 
   def next_step
