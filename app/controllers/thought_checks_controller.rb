@@ -42,7 +42,7 @@ class ThoughtChecksController < ApplicationController
     else
       flash[:notice] = "Pensée sauvegardée..."
       session[:thought_check_step] = session[:thought_check_params] = nil
-      redirect_to @thought_check
+      redirect_to thought_checks_path
     end
     # render 'new'
     # @profile = Profile.find(current_user.id)

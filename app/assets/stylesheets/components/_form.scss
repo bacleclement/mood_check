@@ -135,6 +135,10 @@ fieldset select {
     height: 350px;
     border: 0px; 
   }
+  &#thought_check_thought {
+    height: 350px;
+    border: 0px; 
+  }
   &#thought_check_emotion {
     height: 350px;
     border: 0px; 
@@ -152,7 +156,9 @@ fieldset select {
     padding: 3px;
     border: 1px #619BA6 solid;
     border-radius: 2px;
-   
+    white-space: nowrap;
+    overflow: hidden;
+    white-space: initial;
   }
 }
 
@@ -161,9 +167,9 @@ fieldset select {
   color: white;
 }
 
-option:first-child {
-    display: none;
-  }
+//option:first-child {
+//    display: none;
+//  }
 
 .next {
       display: flex;

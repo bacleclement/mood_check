@@ -1,6 +1,56 @@
-<p>Qu'est-ce qui vous a passé par la tête lors de cette contrariété ? </p>
-<% if @thought_check.about = 'De moi' %>
-  
+
+<p>À quoi ressemblé le plus votre pensée durant cette contrariété ?</p>
+<% if @thought_check.about == 'De moi' %>
+  <%= f.select(:thought, [['Si je n\'ai pas été embauché, c\'est que je ne vaux rien', 'Si je n\'ai pas été embauché, c\'est que je ne vaux rien'],
+                          ['Si je n\'ai pas 20 sur 20 à cet examen, c\'est que je suis nul', 'Si je n\'ai pas 20 sur 20 à cet examen, c\'est que je suis nul'],
+                          ['Elle n\'a pas voulu sortir avec moi ; je vois bien que je n\'arriverai jamais à sortir avec une fille', 'Elle n\'a pas voulu sortir avec moi ; je vois bien que je n\'arriverai jamais à sortir avec une fille'],
+                          ['J\'ai été licencié de mon entreprise, ce n\'est pas étonnant, je rate tout ce que je fais dans la vie', 'J\'ai été licencié de mon entreprise, ce n\'est pas étonnant, je rate tout ce que je fais dans la vie'],
+                          ['Je ne me sens pas de taille à affronter une situation, donc je suis un looser.', 'Je ne me sens pas de taille à affronter une situation, donc je suis un looser.'],
+                         ],{ :prompt => "d"},
+                           { :multiple => false, :size => 5, :class => 'form' }
+                         ) %>
 <% end %>
-<%= f.input :thought, :label => false, input_html: { maxlength: 20 }, :placeholder => 'Je n\'arriverai jamais à finir ce dossier à temps.' %>
+<% if @thought_check.about == 'Des autres' %>
+   <%= f.select(:thought, [['Je lui ai laissé un message mais il ne m\'a pas rappelé, il ne me considère plus comme son ami.', 'Je lui ai laissé un message mais il ne m\'a pas rappelé, il ne me considère plus comme son ami.'],
+                          ['Mon patron m\'a regardé de travers, il pense certainement me licencier', 'Mon patron m\'a regardé de travers, il pense certainement me licencier'],
+                          ['J\'ai fait une erreur au travail, tout le monde va le savoir et je serai complètement ridicule aux yeux de tous.', 'J\'ai fait une erreur au travail, tout le monde va le savoir et je serai complètement ridicule aux yeux de tous.'],
+                          ['Après tout ce que j\'ai fait pour lui, il pourrait au moins être reconnaissant.', 'Après tout ce que j\'ai fait pour lui, il pourrait au moins être reconnaissant.'],
+                          ['Si mon fils ne travaille pas à l\'école, c\'est parce que je suis une mauvaise mère.', 'Si mon fils ne travaille pas à l\'école, c\'est parce que je suis une mauvaise mère.'],
+                          ['Je n\'aime pas déplaire aux gens.', 'Je n\'aime pas déplaire aux gens.'],
+                         ],{ :prompt => "d"},
+                           { :multiple => false, :size => 5, :class => 'form' }
+                         ) %>
+<% end %>
+<% if @thought_check.about == 'Du passé' %>
+   <%= f.select(:thought, [['Je n\'arriverai jamais à sortir de mon passé.', 'Je n\'arriverai jamais à sortir de mon passé.'],
+                          ['J\'ai raté ma vie à cause des erreurs de mon passé', 'J\'ai raté ma vie à cause des erreurs de mon passé'],
+                          ['', ''],
+                          ['', ''],
+                          ['', ''],
+                         ],{ :prompt => "d"},
+                           { :multiple => false, :size => 5, :class => 'form' }
+                         ) %>
+<% end %>
+<% if @thought_check.about == 'Du futur' %>
+   <%= f.select(:thought, [['J\'ai peur de tomber malade moi ou l\'un de mes proches', 'J\'ai peur de tomber malade moi ou l\'un de mes proches'],
+                          ['Je suis inquiet(e) à propos de l\'avenir', 'Je suis inquiet(e) à propos de l\'avenir'],
+                          ['Rien ne s\'améliorera jamais', 'Rien ne s\'améliorera jamais'],
+                          ['C\'est sans espoir', 'C\'est sans espoir'],
+                          ['', ''],
+                         ],{ :prompt => "d"},
+                           { :multiple => false, :size => 5, :class => 'form' }
+                         ) %>
+<% end %>
+<% if @thought_check.about == 'Du monde' %>
+   <%= f.select(:thought, [['Ce monde est pourri', 'Ce monde est pourri'],
+                          ['Les gens sont égoïstes', 'Les gens sont égoïstes'],
+                          ['', ''],
+                          ['', ''],
+                          ['', ''],
+                         ],{ :prompt => "d"},
+                           { :multiple => false, :size => 5, :class => 'form' }
+                         ) %>
+<% end %>
+
+
 

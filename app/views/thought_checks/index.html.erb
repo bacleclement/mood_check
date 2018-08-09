@@ -1,5 +1,37 @@
-<h1 style="color: #FFF;">Mes pensées</h1>
-<% @thought_checks.each do |thought_check| %>
-    <%= render 'shared/card', thought_check: thought_check %>
-  <hr>
-<% end %>
+<div class="container"> 
+  <div class="row"> 
+    <h1 class="text-center" style=" padding-top: 150px;">Dashboard</h1>
+    <div class="col-xs-12 col-md-6 text-center">
+      <h2>À la maison</h2>
+    </div>
+    <div class="col-xs-12 col-md-6 text-center">
+      <h2>Dans les transports</h2>
+    </div>
+    <div class="col-xs-12 col-md-6 text-center">
+      <h2>Au travail</h2> 
+    </div>
+    <div class="col-xs-12 col-md-6 text-center">
+      <h2>Dans mon lit</h2> 
+    </div>
+    <div class="col-xs-12 col-md-6 text-center">
+      <h2>Dans un magasin</h2> 
+    </div>
+    <div class="col-xs-12 col-md-6 text-center">
+      <h2>En vacances</h2> 
+    </div>
+    <div class="col-xs-12 col-md-6 text-center">
+      <h2>Au sport</h2> 
+    </div>
+    <div class="col-xs-12 col-md-6 text-center">
+      <h2>Autre</h2> 
+    </div>
+  </div>
+  <h1 class="text-center">Mes pensées</h1>
+  <% @thought_checks.each do |thought_check| %>
+      <%= render 'shared/card', thought_check: thought_check %>
+    <hr>
+  <% end %>
+</div>
+
+
+
