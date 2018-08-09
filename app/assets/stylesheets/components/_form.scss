@@ -152,10 +152,13 @@ fieldset select {
     padding: 3px;
     border: 1px #619BA6 solid;
     border-radius: 2px;
-    &:hover{
-        color: #619BA6;
-      }
+   
   }
+}
+
+.selected {
+  background-color: #FE7F2D;
+  color: white;
 }
 
 option:first-child {

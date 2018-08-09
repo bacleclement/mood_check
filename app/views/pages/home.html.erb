@@ -1,7 +1,7 @@
 <div class="banner">
   <div class="banner-content">
     <%= image_tag("trust.jpg", size: "200x250", class: "img")%>
-    <h2>Mind</h2>
+    <h2 style="color: #FE7F2D; ">Mind</h2>
     <p style="color: white;">Remettre en question ses pensées, <br>passer à l'action pour changer</p>
     <% if current_user  %>
       <%= link_to(new_thought_check_path) do %>
@@ -206,11 +206,23 @@
 </div>
 
 
-<div class="banner">
-  <div class="banner-content">
-    <h2>Mind</h2>
-    <p style="color: white;">1. J'écris ma pensée </p>
-    <p style="color: white;">2. Je la remets en question</p>
-    <p style="color: white;">3. Je pense différement</p>
+<div class="container"> 
+  <div class="row"> 
+    <div class="col-xs-12"> 
+      <h2 class="title-features">Mind</h2>
+    </div>
+  </div>
+   <div class="row"> 
+    <div class="col-xs-12 col-md-4"> 
+      <p class="feature"><span style="color: #FE7F2D;">1.</span> J'écris ma pensée </p>
+    </div>
+    <div class="col-xs-12 col-md-4"> 
+      <p class="feature"><span style="color: #FE7F2D;">2.</span> Je la remets en question</p>
+    </div>
+    <div class="col-xs-12 col-md-4"> 
+      <p class="feature"><span style="color: #FE7F2D;">3.</span> Je pense différement</p>
+    </div>
   </div>
 </div>
+
+

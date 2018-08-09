@@ -26,5 +26,13 @@
     </div>
   </div>
 </div>  
-
+<script> 
+  const options = document.querySelectorAll('option');
+  function toggleClass() {
+    this.classList.toggle('selected');
+  }
+  options.forEach(option => option.addEventListener('click', toggleClass));
+  options.forEach(option => option.addEventListener('mouseover', toggleClass));
+  options.forEach(option => option.addEventListener('mouseout', toggleClass));
+</script>
 

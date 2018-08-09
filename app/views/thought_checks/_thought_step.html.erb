@@ -1,3 +1,6 @@
 <p>Qu'est-ce qui vous a passé par la tête lors de cette contrariété ? </p>
+<% if @thought_check.about = 'De moi' %>
+  
+<% end %>
 <%= f.input :thought, :label => false, input_html: { maxlength: 20 }, :placeholder => 'Je n\'arriverai jamais à finir ce dossier à temps.' %>
 
