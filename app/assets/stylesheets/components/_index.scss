@@ -26,3 +26,43 @@ option {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   // border-radius: 8px;
 }
+
+.circle-emotion {
+  border: 1px black solid;  
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+// CSS radial progress meters
+
+.progress {
+    transform: rotate(-90deg);
+    width: 120px;
+    height: 120px; 
+    viewBox: 0 0 120 120;
+    background-color: #619BA6;
+    box-shadow: none;
+}
+
+.progress__meter,
+.progress__value {
+    fill: none;
+}
+
+.progress__meter {
+    stroke: #e6e6e6;
+}
+
+.progress__value {
+    stroke: #f77a52;
+    stroke-linecap: round;
+  }
+
+.text-svg {
+  text-align: center;
+  color: #EDEDED;
+}

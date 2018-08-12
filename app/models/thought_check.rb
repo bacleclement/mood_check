@@ -76,4 +76,57 @@ class ThoughtCheck < ApplicationRecord
   def last_step?
     current_step == steps.last
   end
+
+
+  def total(situation)
+    maison ||= 0
+    transports ||= 0
+    travail ||= 0
+    lit ||= 0
+    magasin ||= 0
+    vacances ||= 0
+    sport ||= 0
+    autre ||= 0
+    total ||= 0
+    # The purpose here is to count the number of thought check for each situation
+    if situation == 'À la maison'
+        maison += 1
+      end
+
+      if situation == 'Dans les transports'
+        transports += 1
+      end
+
+      if situation == 'Au travail'
+        travail += 1
+      end
+
+      if situation == 'Dans mon lit'
+        lit += 1
+      end
+
+      if situation == 'Dans un magasin'
+        magasin += 1
+      end
+
+      if situation == 'En vacances'
+        vacances += 1
+      end
+
+      if situation == 'Au sport'
+        sport += 1
+      end
+
+      if situation == 'Autre'
+        autre += 1
+      end
+
+  end
+
+  def maison(situation)
+    if maison !
+      maison << thought_check.situation
+    end 
+  end
+
 end
